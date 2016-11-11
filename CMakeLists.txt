@@ -20,8 +20,6 @@ ELSE(HAVE_F2C)
   SET(I77_LIB libI77 CACHE STRING "The name of the I77 library")
 ENDIF(HAVE_F2C)
 
-TARGET_LINK_LIBRARIES(lm)
-
 ########################## NO CHANGES BEYOND THIS POINT ##########################
 
 INCLUDE_DIRECTORIES(.)
