@@ -1,8 +1,8 @@
-# sba CMake file; see http://www.cmake.org and 
+# sba CMake file; see http://www.cmake.org and
 #                     http://www.insightsoftwareconsortium.org/wiki/index.php/CMake_Tutorial
 
 PROJECT(SBA)
-#CMAKE_MINIMUM_REQUIRED(VERSION 1.4)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 
 # f2c is sometimes equivalent to libF77 & libI77; in that case, set HAVE_F2C to 0
 SET(HAVE_F2C 1 CACHE BOOL "Do we have f2c or F77/I77?" )
