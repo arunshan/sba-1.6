@@ -3,14 +3,14 @@
 #
 CC=gcc
 #ARCHFLAGS=-march=pentium4 # YOU MIGHT WANT TO UNCOMMENT THIS FOR P4
-CFLAGS=$(ARCHFLAGS) -O3 -funroll-loops -Wall -lpthread -lrt -ldl -lm #-Wstrict-aliasing #-g -pg
+CFLAGS=$(ARCHFLAGS) -O3 -funroll-loops -Wall #-Wstrict-aliasing #-g -pg
 OBJS=sba_levmar.o sba_levmar_wrap.o sba_lapack.o sba_crsm.o sba_chkjac.o
 SRCS=sba_levmar.c sba_levmar_wrap.c sba_lapack.c sba_crsm.c sba_chkjac.c
 AR=ar
 RANLIB=ranlib
 MAKE=make
 
-all: libsba.a dem
+all: libsba.a dem -lpthread -lrt -ldl -lm
 
 libsba.a: $(OBJS)
 	$(AR) crv libsba.a $(OBJS)
