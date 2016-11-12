@@ -4,8 +4,6 @@
 PROJECT(SBA)
 CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 
-link_directories(/usr/local/lib)
-
 # f2c is sometimes equivalent to libF77 & libI77; in that case, set HAVE_F2C to 0
 SET(HAVE_F2C 1 CACHE BOOL "Do we have f2c or F77/I77?" )
 
