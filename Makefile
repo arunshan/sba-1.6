@@ -4,7 +4,7 @@
 CC=gcc
 #ARCHFLAGS=-march=pentium4 # YOU MIGHT WANT TO UNCOMMENT THIS FOR P4
 CFLAGS=$(ARCHFLAGS) -O3 -funroll-loops -Wall #-Wstrict-aliasing #-g -pg
-OBJS=sba_levmar.o sba_levmar_wrap.o sba_lapack.o sba_crsm.o sba_chkjac.o -lpthread -lrt -ldl -lm
+OBJS=sba_levmar.o sba_levmar_wrap.o sba_lapack.o sba_crsm.o sba_chkjac.o
 SRCS=sba_levmar.c sba_levmar_wrap.c sba_lapack.c sba_crsm.c sba_chkjac.c
 AR=ar
 RANLIB=ranlib
@@ -14,7 +14,7 @@ all: libsba.a dem
 
 libsba.a: $(OBJS)
 	$(AR) crv libsba.a $(OBJS)
-	$(RANLIB) libsba.a
+	$(RANLIB) libsba.a  -lpthread -lrt -ldl -lm
 
 sba_levmar.o: sba.h sba_chkjac.h compiler.h
 sba_levmar_wrap.o: sba.h
