@@ -22,9 +22,6 @@ sba_lapack.o: sba.h compiler.h
 sba_crsm.o: sba.h
 sba_chkjac.o: sba.h sba_chkjac.h compiler.h
 
-dem:
-	cd demo; $(MAKE)
-
 clean:
 	@rm -f $(OBJS)
 	cd demo; $(MAKE) clean
